@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find src:*)",
+      "Bash(find contract-risk-frontend:*)",
+      "Bash(grep -E \"^contract-risk-frontend/src/|:$\")",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)"
+    ]
+  }
+}
