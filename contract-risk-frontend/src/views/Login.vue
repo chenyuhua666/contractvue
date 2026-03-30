@@ -120,7 +120,7 @@ import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import { DocumentChecked, User, Lock } from '@element-plus/icons-vue'
 import type { FormInstance, FormRules } from 'element-plus'
-import { authApiService } from '../api/auth'
+import { authApi } from '../api/auth'
 import { useUserStore } from '../stores/user'
 
 const router = useRouter()
@@ -185,7 +185,7 @@ const handleLogin = async () => {
 
     loading.value = true
     try {
-      const response = await authApiService.login(loginForm)
+      const response = await authApi.login(loginForm)
       userStore.login(response)
 
       ElMessage.success({
@@ -222,7 +222,7 @@ const handleRegister = async () => {
 
     loading.value = true
     try {
-      const response = await authApiService.register({
+      const response = await authApi.register({
         username: registerForm.username,
         password: registerForm.password
       })
