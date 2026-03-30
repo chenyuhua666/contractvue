@@ -13,13 +13,13 @@ export interface LoginResponse {
 }
 
 export const authApi = {
-  async login(request: LoginRequest): Promise<LoginResponse> {
-    const { data } = await request.post<LoginResponse>('/auth/login', request)
-    return data
+  async login(data: LoginRequest): Promise<LoginResponse> {
+    const { data: res } = await request.post<LoginResponse>('/api/auth/login', data)
+    return res
   },
 
-  async register(request: LoginRequest): Promise<LoginResponse> {
-    const { data } = await request.post<LoginResponse>('/auth/register', request)
-    return data
+  async register(data: LoginRequest): Promise<LoginResponse> {
+    const { data: res } = await request.post<LoginResponse>('/api/auth/register', data)
+    return res
   }
 }
